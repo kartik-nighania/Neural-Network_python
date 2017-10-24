@@ -22,10 +22,6 @@ data_path = 'Bike-Sharing-Dataset/hour.csv'
 
 rides = pd.read_csv(data_path)
 
-
-# In[17]:
-
-
 rides.head()
 
 rides[:24*10].plot(x='dteday', y='cnt')
@@ -85,9 +81,6 @@ val_features, val_targets = features[-60*24:], targets[-60*24:]
 # 
 # We use the weights to propagate signals forward from the input to the output layers in a neural network. We use the weights to also propagate error backwards from the output back into the network to update our weights. This is called *backpropagation*.
 #   
-
-# In[23]:
-
 
 class NeuralNetwork(object):
     def __init__(self, input_nodes, hidden_nodes, output_nodes, learning_rate):
@@ -159,9 +152,6 @@ class NeuralNetwork(object):
         final_outputs = final_inputs # signals from final output layer 
         
         return final_outputs
-
-
-# In[24]:
 
 
 def MSE(y, Y):
